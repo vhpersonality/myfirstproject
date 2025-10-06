@@ -1,0 +1,36 @@
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
+
+
+@require_GET
+def cases(request):
+    data = [
+        {
+            'title': 'Glow — Holistic wellness super app',
+            'description': 'Launching a wellness membership and marketplace that reimagines the customer journey across mobile and web.',
+            'image': 'https://cdn.jsdelivr.net/gh/RedotStudio/assets@main/case-glow.jpg',
+            'industry': 'Wellness',
+            'year': '2023',
+            'services': ['Product strategy', 'UX/UI design', 'Full-stack development'],
+            'tagline': 'Guiding members through a mindful digital journey',
+        },
+        {
+            'title': 'Everbank — Next-gen banking experience',
+            'description': 'Designing a modular banking platform that scales across retail, wealth, and business audiences.',
+            'image': 'https://cdn.jsdelivr.net/gh/RedotStudio/assets@main/case-everbank.jpg',
+            'industry': 'Fintech',
+            'year': '2024',
+            'services': ['Design systems', 'Mobile apps', 'Design ops'],
+            'tagline': 'Reinventing finance through clarity and trust',
+        },
+        {
+            'title': 'Musee — Immersive cultural streaming',
+            'description': 'Building a cinematic streaming experience for live performances, archives, and exclusive events.',
+            'image': 'https://cdn.jsdelivr.net/gh/RedotStudio/assets@main/case-musee.jpg',
+            'industry': 'Entertainment',
+            'year': '2023',
+            'services': ['Brand identity', 'Product design', 'Front-end engineering'],
+            'tagline': 'Celebrating culture with immersive storytelling',
+        },
+    ]
+    return JsonResponse(data, safe=False)
