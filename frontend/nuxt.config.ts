@@ -16,6 +16,9 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.scss'],
   modules: ['@nuxt/image-edge'],
+  image: {
+    domains: ['cdn.jsdelivr.net']
+  },
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:8000'
